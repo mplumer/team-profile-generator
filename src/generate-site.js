@@ -3,7 +3,11 @@ const fs = require('fs');
 // Write page-template data to html file
 const writeFile = fileContent => {
     return new Promise((resolve, reject) => {
+<<<<<<< HEAD
         fs.writeFile('./dist/team-profile.html', fileContent, err => {
+=======
+        fs.writeFile('./dist/Team-Profile.html', fileContent, err => {
+>>>>>>> develop
             // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
             if (err) {
                 reject(err);

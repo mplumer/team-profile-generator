@@ -8,8 +8,8 @@ const generateTeam = teamArr => {
             <h5 class="card-title">${name}</h5>
             <h6 class="card-subtitle mb-2 text-muted">${role}</h6>
             <p class="id-text">ID:${id}</p>
-            <p class="email-link">Email:<a href="#" class="email-link">${email}</a></p>
-            <p class="github-text">Github:${github}</p>
+            <p><a href="mailto:${email}" class="btn mt-auto"> Email: ${email}</a></p>
+            <p><a href="https://github.com/${github}" target="_blank" class="btn mt-auto">Visit my GitHub page</a></p>
             <p class="school-text">School:${school}</p>
         </div>
         </div>
@@ -21,7 +21,7 @@ const generateTeam = teamArr => {
 
 module.exports = templateData => {
     // destructure page data by section
-    const { mName, mId, mEmail, office, employee } = templateData;
+    const { mName, mId, email, office, employee } = templateData;
 
     console.log(templateData);
   
@@ -33,7 +33,7 @@ module.exports = templateData => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Team</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="./src/style.css">
+        <link rel="stylesheet" href="/src/style.css">
     </head>
     <body class="container">
         <div class="row">
@@ -50,7 +50,7 @@ module.exports = templateData => {
                         <h5 class="card-title">${mName}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Manager</h6>
                         <p class="id-text">ID:${mId}</p>
-                        <p class="email-link">Email:<a href="#" class="email-link">${mEmail}</a></p>
+                        <p class="email-link"><a href="mailto:${email}" class="btn mt-auto"> Email: ${email}</a></p>
                         <p class="office-text">Office Number:${office}</p>
                     </div>
                 </div>

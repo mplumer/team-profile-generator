@@ -1,8 +1,15 @@
 .header {
+<<<<<<< HEAD
     background-color:#e92727;	    
     text-align: center;	   
     font-size: 30px;
     color: white;
+=======
+    background-color:red;	    
+    text-align: center;	   
+    font-size: 30px;
+    color:white;
+>>>>>>> develop
     font-weight: bold;
 }
 
@@ -14,10 +21,10 @@
 }
 
 .manager-title {
-    background-color: #3252a8;
+    background-color: purple;
     color: white;
 }
 
 .employee-title {
-    background-color: #91abf2;
+    background-color: blue;
 }

@@ -1,44 +1,24 @@
 
-const Intern = require('../lib/Intern.js');
+const Intern = require('../lib/Intern');
 
-
-
-test('creates a new intern object', () => {
-    const intern = new Intern('Chase');
+test('creates an intern object', () => {
+    const intern = new Intern('Chase', 3, 'chase@company.com', 'Vandy');
 
     expect(intern.name).toBe('Chase');
     expect(intern.id).toEqual(expect.any(Number));
     expect(intern.email).toEqual(expect.any(String));
     expect(intern.school).toEqual(expect.any(String));
-    expect(intern.role).toEqual(expect.any(String));
+
 });
 
-test('gets intern name', () => {
-    const intern = new Intern('Chase');
+test("gets intern school as an object", () => {
+    const intern = new Intern('Max');
 
-    expect(intern.getName()).toHaveProperty('name');
+    expect(intern.getSchool()).toHaveProperty('school');
 });
 
-test('gets intern ID', () => {
-    const intern = new Intern('Chase');
+test("gets intern role as an object", () => {
+    const intern = new Intern('Max');
 
-    expect(intern.getID()).toHaveProperty('ID');
-});
-
-test('gets intern email', () => {
-    const intern = new Intern('Chase');
-
-    expect(intern.getName()).toHaveProperty('Email');
-});
-
-test('gets intern school', () => {
-    const intern = new Intern('Chase');
-
-    expect(intern.getSchool()).toHaveProperty('School');
-});
-
-test('gets intern role', () => {
-    const intern = new Intern('Chase');
-
-    expect(intern.getRole()).toHaveProperty('Role');
+    expect(intern.getRole()).toHaveProperty('role', 'Intern');
 });

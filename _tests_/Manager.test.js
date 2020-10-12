@@ -1,38 +1,29 @@
 
-const Manager = require('../lib/Manager.js');
+const Manager = require('../lib/Manager');
+
+// jest.mock('../lib/Manager');
+
+console.log(new Manager());
 
 
+test('creates a manager object', () => {
+    const manager = new Manager('Max', 1, 'max@company.com', '100A');
 
-test('creates a new manager object', () => {
-    const manager = new Manager('Kyle');
-
-    expect(manager.name).toBe('Kyle');
+    expect(manager.name).toBe('Max');
     expect(manager.id).toEqual(expect.any(Number));
     expect(manager.email).toEqual(expect.any(String));
-    expect(manager.role).toEqual(expect.any(String));
-    expect(manager.office).toEqual(expect.any(Number));
+    expect(manager.officeNumber).toEqual(expect.any(String));
+
 });
 
-test('gets manager name', () => {
-    const manager = new Manager('Kyle');
+test("get office number as an object", () => {
+    const manager = new Manager('Max');
 
-    expect(manager.getName()).toHaveProperty('name');
+    expect(manager.getOfficeNumber()).toHaveProperty('officeNumber');
 });
 
-test('gets manager ID', () => {
-    const manager = new Manager('Kyle');
+test("gets manager role as an object", () => {
+    const manager = new Manager('Max');
 
-    expect(manager.getID()).toHaveProperty('ID');
-});
-
-test('gets manager email', () => {
-    const manager = new Manager('Kyle');
-
-    expect(manager.getEmail()).toHaveProperty('Email');
-});
-
-test('gets manager role', () => {
-    const manager = new Manager('Kyle');
-
-    expect(manager.getRole()).toHaveProperty('Role');
+    expect(manager.getRole()).toHaveProperty('role', 'Manager');
 });

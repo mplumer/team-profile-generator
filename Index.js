@@ -11,12 +11,12 @@ const promptManager = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'mNAme',
+            name: 'mName',
             message: 'Please enter team manager name:'
         },
         {
             type: 'input',
-            name: 'mID',
+            name: 'mId',
             message: 'Please enter team manager Employee ID:'
         },
         {
@@ -30,14 +30,11 @@ const promptManager = () => {
             message: 'Please enter team manager Office Number:'
         },
         {
-            type: 'checkbox',
-            name: 'role',
-            message: 'Please select the employee role you would like to add to your team:',
-            choices: [
-                'Engineer',
-                'Intern'
-            ]
-        }
+            type: 'confirm',
+            name: 'confirmAddFirstEmp',
+            message: 'Would you like to add an employee to this team?',
+            default: false
+        }	        
     ]);
 };
 
@@ -46,6 +43,10 @@ const promptEmployee = teamData => {
         teamData.employee = [];
     };
 
+    if (!teamData.confirmAddFirstEmp) {
+        return teamData;
+    }
+
     console.log(`
     =================
     Add a New Employee
@@ -53,6 +54,15 @@ const promptEmployee = teamData => {
     `);
 
     return inquirer.prompt([
+        {
+            type: 'list',
+            name: 'role',
+            message: 'Which type of Employee would you like to add?',
+            choices: [
+                'Engineer',
+                'Intern'
+            ]
+        },
         {
             type: 'input',
             name: 'name',
@@ -71,7 +81,7 @@ const promptEmployee = teamData => {
         {
             type: 'input',
             name: 'github',
-            message: 'Please enter the Employees github user name:'
+            message: 'Please enter the Employees github user name (github.com/username):'
         },
         {
             type: 'input',

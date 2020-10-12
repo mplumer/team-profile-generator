@@ -1,0 +1,23 @@
+.header {
+    background-color:#D3D3D3;	    
+    text-align: center;	   
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+
+.card {
+    padding: 5px;
+    display: block;
+    margin: 5px;
+    text-align: center;
+}
+
+.manager-title {
+    background-color: #3252a8;
+    color: white;
+}
+
+.employee-title {
+    background-color: #91abf2;
+}

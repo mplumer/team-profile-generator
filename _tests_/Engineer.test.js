@@ -1,5 +1,3 @@
-const { toBindingIdentifierName } = require('@babel/types');
-const { test, expect, jest } = require('@jest/globals');
 const Engineer = require('../lib/Engineer.js');
 
 
@@ -10,7 +8,7 @@ test('creates a new engineer object', () => {
     expect(engineer.name).toBe('Al');
     expect(engineer.id).toEqual(expect.any(Number));
     expect(engineer.email).toEqual(expect.any(String));
-    expect(engineer.gitHub).toEqual(expect.any(String));
+    expect(engineer.github).toEqual(expect.any(String));
     expect(engineer.role).toEqual(expect.any(String));
 });
 
